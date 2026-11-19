@@ -1,0 +1,1179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Suchendra A – Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5ece0;
+        --bg2: #ede3d6;
+        --card: #fcf7f0;
+        --ink: #1c1209;
+        --mut: #7a5c48;
+        --line: #e2d3c0;
+        --or: #c4601d;
+        --br: #8b3f12;
+        --pill: #f3dfc6;
+        --hdr: rgba(245, 236, 224, 0.92);
+        --c1: #a85418;
+        --c2: #1f3a5f;
+        --c3: #2f6b4f;
+        --c4: #12706a;
+        --code: #fcf7f0;
+        --onor: #fff;
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          color-scheme: dark;
+          --bg: #000;
+          --bg2: #0d0d0d;
+          --card: #111;
+          --ink: #fff;
+          --mut: #a3a3a3;
+          --line: #2a2a2a;
+          --or: #fff;
+          --br: #d4d4d4;
+          --pill: #1c1c1c;
+          --hdr: rgba(0, 0, 0, 0.92);
+          --c1: #e5e5e5;
+          --c2: #e5e5e5;
+          --c3: #e5e5e5;
+          --c4: #e5e5e5;
+          --onor: #000;
+        }
+      }
+      :root[data-theme="dark"] {
+        color-scheme: dark;
+        --bg: #000;
+        --bg2: #0d0d0d;
+        --card: #111;
+        --ink: #fff;
+        --mut: #a3a3a3;
+        --line: #2a2a2a;
+        --or: #fff;
+        --br: #d4d4d4;
+        --pill: #1c1c1c;
+        --hdr: rgba(0, 0, 0, 0.92);
+        --c1: #e5e5e5;
+        --c2: #e5e5e5;
+        --c3: #e5e5e5;
+        --c4: #e5e5e5;
+        --onor: #000;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: calc(84px + env(safe-area-inset-top, 0px));
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font:
+          400 1.05rem/1.6 "Plus Jakarta Sans",
+          system-ui,
+          sans-serif;
+        background-image: radial-gradient(var(--line) 1px, transparent 1px);
+        background-size: 28px 28px;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0 0 auto;
+        height: env(safe-area-inset-top, 0px);
+        background: var(--hdr);
+        z-index: 10;
+      }
+      a {
+        color: inherit;
+      }
+      :focus-visible {
+        outline: 3px solid var(--or);
+        outline-offset: 3px;
+        border-radius: 8px;
+      }
+      .wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 28px;
+      }
+      header {
+        position: sticky;
+        top: env(safe-area-inset-top, 0px);
+        z-index: 11;
+        background: var(--hdr);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 2px 10px rgba(80, 40, 10, 0.06);
+      }
+      .bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        height: 76px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.2rem;
+        white-space: nowrap;
+      }
+      .logo {
+        display: grid;
+        place-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        background: var(--or);
+        color: var(--onor);
+        font-weight: 800;
+        font-size: 1rem;
+      }
+      nav {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+      }
+      nav a {
+        padding: 10px 20px;
+        border-radius: 99px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        color: var(--mut);
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+      nav a:hover {
+        color: var(--ink);
+      }
+      nav a.on {
+        background: var(--or);
+        color: var(--onor);
+        box-shadow: 0 6px 16px rgba(196, 96, 29, 0.3);
+      }
+      #theme {
+        border: 1px solid var(--line);
+        background: var(--card);
+        color: var(--ink);
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        cursor: pointer;
+        flex: none;
+      }
+      section {
+        padding: 96px 0;
+      }
+      .hero {
+        padding: 72px 0 80px;
+      }
+      .hero .wrap {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 48px;
+        align-items: center;
+      }
+      .open {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 20px;
+        border-radius: 99px;
+        background: var(--pill);
+        color: var(--or);
+        font-weight: 600;
+      }
+      .open::before {
+        content: "";
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: var(--or);
+      }
+      h1 {
+        font-size: clamp(3.2rem, 9vw, 6.4rem);
+        font-weight: 800;
+        letter-spacing: -0.045em;
+        line-height: 1;
+        margin: 40px 0 22px;
+      }
+      h1 span {
+        background: linear-gradient(180deg, var(--or), var(--br));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .role {
+        font-weight: 700;
+        color: var(--br);
+        font-size: 1.1rem;
+        margin: 0 0 14px;
+      }
+      :root[data-theme="dark"] .role {
+        color: var(--or);
+      }
+      .lead {
+        max-width: 52ch;
+        color: var(--mut);
+        margin: 0 0 30px;
+      }
+      .btns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-bottom: 26px;
+      }
+      .b {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 26px;
+        border-radius: 99px;
+        font-weight: 700;
+        text-decoration: none;
+        border: 2px solid;
+        background: transparent;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .b:hover {
+        transform: translateY(-2px);
+      }
+      .b.main {
+        background: linear-gradient(135deg, var(--br), var(--or));
+        color: var(--onor);
+        border-color: transparent;
+        box-shadow: 0 10px 24px rgba(139, 63, 18, 0.3);
+      }
+      .b.o {
+        color: var(--c1);
+        border-color: var(--c1);
+      }
+      .b.n {
+        color: var(--c2);
+        border-color: var(--c2);
+      }
+      .b.g {
+        color: var(--c3);
+        border-color: var(--c3);
+      }
+      .b.t {
+        color: var(--c4);
+        border-color: var(--c4);
+      }
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        color: var(--mut);
+      }
+      .code {
+        background: var(--code);
+        border: 1px solid var(--line);
+        border-radius: 36px;
+        padding: 32px 36px;
+        font:
+          500 0.95rem/1.85 "JetBrains Mono",
+          monospace;
+        box-shadow: 0 20px 50px rgba(80, 40, 10, 0.08);
+        overflow-x: auto;
+      }
+      .code .top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        color: var(--mut);
+        font-size: 0.8rem;
+      }
+      .dots i {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      .dots i:nth-child(1) {
+        background: #ff5f57;
+      }
+      .dots i:nth-child(2) {
+        background: #febc2e;
+      }
+      .dots i:nth-child(3) {
+        background: #28c840;
+      }
+      .code pre {
+        margin: 0;
+        font: inherit;
+      }
+      .k {
+        color: var(--ink);
+      }
+      .s {
+        color: var(--br);
+      }
+      .n2 {
+        color: var(--or);
+      }
+      :root[data-theme="dark"] .s {
+        color: #d4d4d4;
+      }
+      .tag {
+        display: inline-block;
+        padding: 6px 18px;
+        border-radius: 99px;
+        background: var(--pill);
+        color: var(--or);
+        font:
+          700 0.78rem "JetBrains Mono",
+          monospace;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+      h2 {
+        font-size: clamp(2.4rem, 6vw, 4rem);
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        line-height: 1.05;
+        margin: 20px 0 48px;
+      }
+      .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+      .about p {
+        margin: 0;
+        padding: 28px 32px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        color: var(--mut);
+      }
+      .sk {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 22px;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        padding: 30px;
+      }
+      .ic {
+        display: grid;
+        place-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 14px;
+        margin-bottom: 22px;
+        font:
+          700 1rem "JetBrains Mono",
+          monospace;
+        color: var(--f);
+        background: color-mix(in srgb, var(--f) 12%, var(--card));
+      }
+      .card h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin: 0 0 16px;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .chips span {
+        padding: 5px 14px;
+        border-radius: 99px;
+        font-size: 0.88rem;
+        font-weight: 500;
+        color: var(--f);
+        background: color-mix(in srgb, var(--f) 12%, var(--card));
+      }
+      .f1 {
+        --f: var(--c1);
+      }
+      .f2 {
+        --f: var(--c2);
+      }
+      .f3 {
+        --f: var(--c3);
+      }
+      .f4 {
+        --f: var(--c4);
+      }
+      .alt {
+        background: var(--bg2);
+      }
+      .pj {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+      .pj .card {
+        padding: 36px;
+        display: flex;
+        flex-direction: column;
+      }
+      .ph {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 22px;
+      }
+      .gh {
+        display: inline-flex;
+        gap: 6px;
+        padding: 8px 18px;
+        border-radius: 99px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-decoration: none;
+        color: var(--f);
+        background: color-mix(in srgb, var(--f) 10%, var(--card));
+        border: 1px solid color-mix(in srgb, var(--f) 25%, transparent);
+      }
+      .gh:hover {
+        background: color-mix(in srgb, var(--f) 20%, var(--card));
+      }
+      .pj h3 {
+        font-size: 1.45rem;
+        font-weight: 700;
+        margin: 0 0 6px;
+        letter-spacing: -0.01em;
+      }
+      .tech {
+        font:
+          500 0.85rem "JetBrains Mono",
+          monospace;
+        color: var(--f);
+        margin-bottom: 18px;
+      }
+      .pj ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 22px;
+        color: var(--mut);
+        flex: 1;
+      }
+      .pj li {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 10px;
+      }
+      .pj li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.65em;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--f);
+      }
+      .pj .chips span {
+        border: 1px solid color-mix(in srgb, var(--f) 30%, transparent);
+        background: transparent;
+      }
+      .tl {
+        list-style: none;
+        margin: 0 auto;
+        padding: 0;
+        max-width: 1040px;
+        position: relative;
+      }
+      .tl::before {
+        content: "";
+        position: absolute;
+        left: 39px;
+        top: 60px;
+        bottom: 60px;
+        width: 1px;
+        background: var(--line);
+      }
+      .tl li {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 34px;
+        margin-bottom: 26px;
+        align-items: start;
+      }
+      .nd {
+        display: grid;
+        place-items: center;
+        width: 80px;
+        height: 80px;
+        border-radius: 22px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        color: var(--or);
+        font-size: 1.5rem;
+        position: relative;
+      }
+      .tl li:first-child .nd {
+        background: var(--or);
+        color: var(--onor);
+        border-color: var(--or);
+      }
+      .tl .card {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 6px 16px;
+        padding: 28px 32px;
+      }
+      .tl h3 {
+        margin: 0;
+        font-size: 1.3rem;
+      }
+      .yr {
+        font:
+          500 0.85rem "JetBrains Mono",
+          monospace;
+        color: var(--mut);
+      }
+      .org {
+        color: var(--or);
+        font-weight: 600;
+        grid-column: 1/-1;
+      }
+      .loc {
+        color: var(--mut);
+        font-size: 0.92rem;
+        grid-column: 1/-1;
+      }
+      .sc {
+        justify-self: start;
+        padding: 5px 16px;
+        border-radius: 99px;
+        background: var(--pill);
+        font-weight: 700;
+        font-size: 0.9rem;
+        color: var(--br);
+        margin-top: 8px;
+        grid-column: 1/-1;
+      }
+      :root[data-theme="dark"] .sc {
+        color: var(--or);
+      }
+      .sic ul {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0 0;
+        color: var(--mut);
+        grid-column: 1/-1;
+      }
+      .sic li {
+        display: block;
+        position: relative;
+        padding-left: 20px;
+        margin: 0 0 8px;
+      }
+      .sic li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.65em;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--or);
+      }
+      .cert {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        max-width: 1040px;
+        margin: 0 auto 40px;
+      }
+      .cert .card {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        padding: 24px 28px;
+        border-radius: 24px;
+      }
+      .cert .ic {
+        margin: 0;
+        flex: none;
+        --f: var(--or);
+      }
+      .cert b {
+        display: block;
+        font-weight: 600;
+        line-height: 1.35;
+      }
+      .cert small {
+        font:
+          400 0.82rem "JetBrains Mono",
+          monospace;
+        color: var(--mut);
+      }
+      .ach {
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 36px 40px;
+        border-radius: 36px;
+      }
+      .ach h3 {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 1.4rem;
+        margin: 0 0 22px;
+      }
+      .ach .ic {
+        margin: 0;
+        width: 42px;
+        height: 42px;
+        --f: var(--or);
+      }
+      .ach ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        color: var(--mut);
+      }
+      .ach li {
+        position: relative;
+        padding-left: 24px;
+        margin-bottom: 12px;
+      }
+      .ach li::before {
+        content: "";
+        position: absolute;
+        left: 2px;
+        top: 0.65em;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--or);
+      }
+      .ct {
+        text-align: center;
+      }
+      .ct h2 {
+        margin: 24px 0 20px;
+      }
+      .ct h2 span {
+        background: linear-gradient(90deg, var(--br), var(--or));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .ct p {
+        max-width: 58ch;
+        margin: 0 auto 34px;
+        color: var(--mut);
+      }
+      .ct .btns {
+        justify-content: center;
+      }
+      .ct .b.sm {
+        padding: 12px 24px;
+        border-color: var(--line);
+        background: var(--card);
+      }
+      footer {
+        padding: 36px 0;
+        text-align: center;
+        color: var(--mut);
+        font-size: 0.9rem;
+        border-top: 1px solid var(--line);
+      }
+      @media (max-width: 1000px) {
+        .sk {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .hero .wrap,
+        .pj {
+          grid-template-columns: 1fr;
+        }
+        nav a {
+          padding: 8px 12px;
+          font-size: 0.92rem;
+        }
+      }
+      @media (max-width: 720px) {
+        nav {
+          display: none;
+        }
+        .sk,
+        .about,
+        .cert {
+          grid-template-columns: 1fr;
+        }
+        section {
+          padding: 64px 0;
+        }
+        .hero {
+          padding-top: 36px;
+        }
+        .tl::before {
+          display: none;
+        }
+        .tl li {
+          grid-template-columns: 1fr;
+        }
+        .nd {
+          width: 54px;
+          height: 54px;
+          border-radius: 16px;
+        }
+        .tl .card {
+          padding: 22px;
+        }
+        .code {
+          padding: 24px 22px;
+          border-radius: 28px;
+        }
+        .pj .card {
+          padding: 26px;
+        }
+        .ach {
+          padding: 26px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .b,
+        nav a {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap bar">
+        <a class="brand" href="#about"
+          ><span class="logo">SA</span>Suchendra A</a
+        >
+        <nav id="nav" aria-label="Sections">
+          <a href="#about">About</a><a href="#skills">Skills</a
+          ><a href="#projects">Projects</a><a href="#education">Education</a
+          ><a href="#certs">Certifications</a><a href="#contact">Contact</a>
+        </nav>
+        <button id="theme" aria-label="Toggle light and dark theme">◐</button>
+      </div>
+    </header>
+    <main>
+      <section id="about" class="hero">
+        <div class="wrap">
+          <div>
+            <span class="open">Open to Opportunities</span>
+            <h1>Suchendra <span>A</span></h1>
+            <p class="role">
+              Aspiring Data Engineer · Full Stack Developer · AI &amp; ML
+              Enthusiast
+            </p>
+            <p class="lead">
+              Information Science &amp; Engineering undergraduate passionate
+              about building reliable data-driven applications and scalable
+              software systems. Strong in Python, SQL, full-stack development,
+              and AI-driven solutions.
+            </p>
+            <div class="btns">
+              <a class="b main" href="mailto:suchendra018@gmail.com"
+                >✉ suchendra018@gmail.com</a
+              >
+              <a
+                class="b o"
+                href="https://github.com/Suchendra-018"
+                target="_blank"
+                rel="noopener"
+                >GitHub</a
+              >
+              <a
+                class="b n"
+                href="https://www.linkedin.com/in/suchendra-a-181718abd"
+                target="_blank"
+                rel="noopener"
+                >LinkedIn</a
+              >
+              <a
+                class="b g"
+                href="https://www.hackerrank.com/profile/suchendra018"
+                target="_blank"
+                rel="noopener"
+                >HackerRank</a
+              >
+              <a
+                class="b t"
+                href="https://leetcode.com/u/Suchendra_18/"
+                target="_blank"
+                rel="noopener"
+                >LeetCode</a
+              >
+            </div>
+            <div class="meta">
+              <span>☎ +91 9844136001</span><span>⌖ Bengaluru, India</span>
+            </div>
+          </div>
+          <div class="code" aria-label="Profile summary">
+            <div class="top">
+              <span class="dots"><i></i><i></i><i></i></span
+              ><span>profile.json</span>
+            </div>
+            <pre><span class="n2">{</span>
+  <span class="k">"name"</span>: <span class="s">"Suchendra A"</span>,
+  <span class="k">"roles"</span>: [
+    <span class="s">"Data Engineer"</span>,
+    <span class="s">"Full Stack Dev"</span>,
+    <span class="s">"AI / ML Engineer"</span>
+  ],
+  <span class="k">"cgpa"</span>: <span class="n2">9.12</span>,
+  <span class="k">"stack"</span>: [
+    <span class="s">"React / Node.js"</span>,
+    <span class="s">"Python / Flask"</span>,
+    <span class="s">"MySQL / MongoDB"</span>,
+    <span class="s">"Docker / Git"</span>,
+    <span class="s">"LLMs / RAG"</span>
+  ],
+  <span class="k">"status"</span>: <span class="s">"available"</span>
+<span class="n2">}</span></pre>
+          </div>
+        </div>
+        <div class="wrap about" style="margin-top: 64px">
+          <p>
+            I am an Information Science and Engineering undergraduate at
+            Cambridge Institute of Technology, Bengaluru, with a CGPA of
+            9.12/10. My interests include software development, AI, machine
+            learning, data science, and problem-solving.
+          </p>
+          <p>
+            I have built real-time communication systems, predictive ML models,
+            satellite telemetry analysis, Android app security analysis, and
+            data visualization tools. I keep improving through projects,
+            training, hackathons, and competitive programming.
+          </p>
+        </div>
+      </section>
+
+      <section id="skills" class="alt">
+        <div class="wrap">
+          <span class="tag">What I know</span>
+          <h2>Technical Skills</h2>
+          <div class="sk" id="skillGrid"></div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="wrap">
+          <span class="tag">What I built</span>
+          <h2>Project Experience</h2>
+          <div class="pj" id="projGrid"></div>
+        </div>
+      </section>
+
+      <section id="education" class="alt">
+        <div class="wrap">
+          <span class="tag">Background</span>
+          <h2>Education</h2>
+          <ol class="tl">
+            <li>
+              <div class="nd">🎓</div>
+              <div class="card">
+                <h3>B.E. – Information Science &amp; Engineering</h3>
+                <span class="yr">2023 – 2027</span
+                ><span class="org">Cambridge Institute of Technology</span
+                ><span class="loc">Bengaluru, Karnataka</span
+                ><span class="sc">CGPA: 9.12 / 10</span>
+              </div>
+            </li>
+            <li>
+              <div class="nd">◈</div>
+              <div class="card">
+                <h3>PUC – PCMB</h3>
+                <span class="yr">2023</span
+                ><span class="org">Amara Jyothi PU College</span
+                ><span class="loc">Mulbagal, Kolar</span
+                ><span class="sc">88.16%</span>
+              </div>
+            </li>
+            <li>
+              <div class="nd">◈</div>
+              <div class="card">
+                <h3>SSLC</h3>
+                <span class="yr">2021</span
+                ><span class="org">Morarji Desai Residential School</span
+                ><span class="loc">Mulbagal, Kolar</span
+                ><span class="sc">93.6%</span>
+              </div>
+            </li>
+            <li class="sic">
+              <div class="nd">✦</div>
+              <div class="card">
+                <h3>Samsung Innovation Campus – AI/ML Trainee</h3>
+                <span class="yr">2025 – 2027</span
+                ><span class="org">Training &amp; Programs</span>
+                <ul>
+                  <li>
+                    Hands-on training in machine learning, basic ML concepts,
+                    and model evaluation.
+                  </li>
+                  <li>
+                    Built and evaluated ML models using Scikit-learn, NumPy, and
+                    Pandas.
+                  </li>
+                  <li>
+                    Practiced data preprocessing, feature engineering, and ML
+                    workflows.
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="certs">
+        <div class="wrap">
+          <span class="tag">Credentials</span>
+          <h2>Certifications</h2>
+          <div class="cert" id="certGrid"></div>
+          <div class="card ach">
+            <h3><span class="ic">★</span>Achievements &amp; Activities</h3>
+            <ul>
+              <li>
+                Participated in multiple hackathons, collaborating in
+                cross-functional teams to design and develop software and
+                data-driven solutions for real-world problems.
+              </li>
+              <li>Solved 100+ Data Structures and Algorithms problems.</li>
+              <li>
+                Student Mentor, facilitating peer learning and technical
+                presentations.
+              </li>
+              <li>
+                Attended technical workshops on Full Stack Development and
+                Machine Learning.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="alt ct">
+        <div class="wrap">
+          <span class="tag">Let’s Connect</span>
+          <h2>Open to Great <span>Opportunities</span></h2>
+          <p>
+            I am always interested in exploring opportunities, collaborating on
+            innovative projects, and connecting with people passionate about
+            technology.
+          </p>
+          <div class="btns">
+            <a class="b main" href="mailto:suchendra018@gmail.com"
+              >✉ suchendra018@gmail.com</a
+            ><a class="b o" href="tel:+919844136001">☎ +91 9844136001</a>
+          </div>
+          <div class="btns">
+            <a
+              class="b sm"
+              href="https://github.com/Suchendra-018"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
+            <a
+              class="b sm"
+              href="https://www.linkedin.com/in/suchendra-a-181718abd"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn</a
+            >
+            <a
+              class="b sm"
+              href="https://www.hackerrank.com/profile/suchendra018"
+              target="_blank"
+              rel="noopener"
+              >HackerRank</a
+            >
+            <a
+              class="b sm"
+              href="https://leetcode.com/u/Suchendra_18/"
+              target="_blank"
+              rel="noopener"
+              >LeetCode</a
+            >
+          </div>
+          <div class="meta" style="justify-content: center">
+            Bengaluru, India
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>© 2026 Suchendra A</footer>
+    <script>
+      const S = [
+        [
+          "</>",
+          "Languages",
+          "f1",
+          ["C++", "Python", "Java", "JavaScript", "SQL"],
+        ],
+        ["▤", "Frontend", "f4", ["React.js", "HTML5", "CSS3"]],
+        [
+          "☰",
+          "Backend",
+          "f3",
+          [
+            "Node.js",
+            "Express.js",
+            "Flask",
+            "REST APIs",
+            "Socket.IO",
+            "WebSockets",
+            "JWT Auth",
+          ],
+        ],
+        [
+          "✦",
+          "AI / ML / GenAI",
+          "f1",
+          [
+            "Machine Learning",
+            "Pandas",
+            "NumPy",
+            "Model Evaluation",
+            "LLMs",
+            "Generative AI",
+            "RAG",
+          ],
+        ],
+        ["⛁", "Databases", "f2", ["MySQL", "MongoDB", "CRUD"]],
+        [
+          "◎",
+          "CS Fundamentals",
+          "f4",
+          ["DSA", "OOP", "DBMS", "OS (Basics)", "Networks (Basics)"],
+        ],
+        ["⚙", "Tools", "f3", ["Git", "GitHub", "Docker", "Postman"]],
+      ];
+      sk = document.getElementById("skillGrid");
+      sk.innerHTML = S.map(
+        ([i, t, c, v]) =>
+          `<div class="card ${c}"><div class="ic">${i}</div><h3>${t}</h3><div class="chips">${v.map((x) => `<span>${x}</span>`).join("")}</div></div>`,
+      ).join("");
+      const P = [
+        [
+          "Satellite Digital Twin – CubeSat Health Monitoring",
+          "Python · XGBoost · Random Forest · LSTM · Explainable AI",
+          "f1",
+          "https://github.com/Suchendra-018/Satellite-Digital-Twin",
+          [
+            "Built an AI-driven digital twin that monitors CubeSat health from subsystem telemetry and flags abnormal behavior.",
+            "Preprocessed telemetry, engineered features, and trained XGBoost, Random Forest, and LSTM models for anomaly detection and predictive fault management.",
+            "Achieved 94.57% accuracy with XGBoost and used Explainable AI to identify the features driving fault detection.",
+          ],
+          ["Python", "XGBoost", "Random Forest", "LSTM", "Explainable AI"],
+        ],
+        [
+          "Real-Time Chat Application",
+          "React.js · Node.js · MongoDB · Socket.IO",
+          "f2",
+          "https://github.com/Suchendra-018/Real-Time-Chat-Application",
+          [
+            "Designed a full-stack messaging app with a React.js frontend and a Node.js and Express.js backend.",
+            "Implemented JWT authentication, RESTful APIs, and MongoDB storage for users and messages.",
+            "Integrated Socket.IO for real-time, bidirectional communication without page refreshes.",
+          ],
+          ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.IO", "JWT"],
+        ],
+        [
+          "AegisAI – Scam and Data Risk Copilot",
+          "Android · AI-Based Risk Analysis · JSON",
+          "f3",
+          "https://github.com/Suchendra-018/Ageis-Scan-App",
+          [
+            "Developed an Android app that helps users identify mobile app scams and understand data and privacy risks.",
+            "Built a local JSON risk database covering 110 mobile applications for application-level risk assessment.",
+            "Identifies harmful APKs and investment apps and presents the related risk information.",
+          ],
+          ["Android", "AI Risk Analysis", "JSON"],
+        ],
+        [
+          "F1-MapFeed – Formula 1 Data Visualization",
+          "Python · FastF1 · Pandas · Flask",
+          "f1",
+          "https://github.com/Suchendra-018/F1-MapFeed",
+          [
+            "Retrieved Formula 1 session and telemetry data using FastF1.",
+            "Used Pandas to process the data and analyze driver performance and session statistics.",
+            "Served the processed data through a Flask web interface.",
+          ],
+          ["Python", "FastF1", "Pandas", "Flask"],
+        ],
+      ];
+      document.getElementById("projGrid").innerHTML = P.map(
+        ([t, tech, c, u, b, tags]) =>
+          `<article class="card ${c}"><div class="ph"><div class="ic" style="margin:0">▣</div><a class="gh" href="${u}" target="_blank" rel="noopener">GitHub ↗</a></div><h3>${t}</h3><div class="tech">${tech}</div><ul>${b.map((x) => `<li>${x}</li>`).join("")}</ul><div class="chips">${tags.map((x) => `<span>${x}</span>`).join("")}</div></article>`,
+      ).join("");
+      const C = [
+        ["Introduction to Large Language Models", "NPTEL, IIT Madras · 2026"],
+        [
+          "Programming, Data Structures and Algorithms using Python",
+          "NPTEL, IIT Madras · 2025",
+        ],
+        ["Python (Basic)", "HackerRank"],
+        ["Data Analytics using Tableau", "Deloitte"],
+        ["AI + Sustainability Virtual Internship", "IBM SkillsBuild"],
+      ];
+      document.getElementById("certGrid").innerHTML = C.map(
+        ([t, o]) =>
+          `<div class="card"><div class="ic">◫</div><div><b>${t}</b><small>${o}</small></div></div>`,
+      ).join("");
+      const r = document.documentElement;
+      document.getElementById("theme").onclick = () => {
+        const d = r.dataset.theme
+          ? r.dataset.theme === "dark"
+          : matchMedia("(prefers-color-scheme:dark)").matches;
+        r.dataset.theme = d ? "light" : "dark";
+      };
+      const L = [...document.querySelectorAll("#nav a")];
+      const io = new IntersectionObserver(
+        (es) =>
+          es.forEach((e) => {
+            if (e.isIntersecting)
+              L.forEach((a) =>
+                a.classList.toggle(
+                  "on",
+                  a.getAttribute("href") === "#" + e.target.id,
+                ),
+              );
+          }),
+        { rootMargin: "-40% 0px -55% 0px" },
+      );
+      document
+        .querySelectorAll("main section[id]")
+        .forEach((s) => io.observe(s));
+    </script>
+  </body>
+</html>
